@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/FX/FireSpark.unity
+- path: Assets/Scenes/FX/LightningProjectile.unity
   isLoaded: 1
   isActive: 1
