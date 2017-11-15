@@ -1,11 +1,11 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "Unity Shaders/11/Image Sequence Animation" {
+Shader "VFX/Image Sequence Animation" {
 	Properties {
 		_Color ("Color Tint", Color) = (1, 1, 1, 1)
 		_MainTex ("Image Sequence", 2D) = "white" {}
-    	_HorizontalAmount ("Horizontal Amount", Float) = 4
-    	_VerticalAmount ("Vertical Amount", Float) = 4
+    	_HorizontalAmount ("X Amount", Float) = 4
+    	_VerticalAmount ("Y Amount", Float) = 4
     	_Speed ("Speed", Range(1, 100)) = 30
 	}
 	SubShader {
@@ -53,9 +53,6 @@ Shader "Unity Shaders/11/Image Sequence Animation" {
 				float row = floor(time / _HorizontalAmount);
 				float column = time - row * _HorizontalAmount;
 				
-//				half2 uv = float2(i.uv.x /_HorizontalAmount, i.uv.y / _VerticalAmount);
-//				uv.x += column / _HorizontalAmount;
-//				uv.y -= row / _VerticalAmount;
 				half2 uv = i.uv + half2(column, -row);
 				uv.x /=  _HorizontalAmount;
 				uv.y /= _VerticalAmount;
