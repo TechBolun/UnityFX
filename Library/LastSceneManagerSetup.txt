@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/FX/Fit.unity
+- path: Assets/Scenes/FX/LightningHitImpact.unity
   isLoaded: 1
   isActive: 1
